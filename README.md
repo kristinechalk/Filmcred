@@ -1,13 +1,13 @@
 # Page List
 
-### Homepage (4 main buttons)     (*! CREATED)
+### Homepage (4 main buttons)     
 - login user
 - login company
 - sign up user
 - sign up company user
 
 
-### Sign Up Page for User (form)   (*! CREATED)
+### Sign Up Page for User (form)   
 - first name 
 - last name
 - company (they work for)
@@ -18,19 +18,19 @@
 - date of birth
 
 
-### Sign Up Page for Companies (form)     (*! CREATED) 
+### Sign Up Page for Companies (form)  
 - company name
 - administrator name
 - email
 - phone number
 
 
-### Login Page User           (*! CREATED)
+### Login Page User   
 - username
 - password
 
 
-### Login Page Company        (*! CREATED)
+### Login Page Company 
 - username
 - password
 
@@ -48,12 +48,10 @@
 
 ### Company Admin Page
 - information: company name, administrator name, email, phone number
-
 - once documents requested list user names and status (update pending or approved)
-
 - once approved export documentation (button)
 
 
-Extension
+Extensions:
 - update a user
 - update a form 
