@@ -10,11 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321144528) do
+ActiveRecord::Schema.define(version: 20141023005427) do
+
+  create_table "requests", force: true do |t|
+    t.integer "worker_id"
+    t.integer "company_id"
+    t.boolean "pending"
+    t.integer "timestamp"
+  end
 
   create_table "users", force: true do |t|
-    t.string "name"
-    t.string "email"
+    t.string   "type"
+    t.string   "name"
+    t.string   "email"
+    t.string   "password"
+    t.string   "company"
+    t.string   "job_title"
+    t.string   "union_id"
+    t.string   "phone_number"
+    t.datetime "birthdate"
+    t.string   "address"
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
 end
