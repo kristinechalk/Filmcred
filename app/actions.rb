@@ -1,15 +1,8 @@
 # Homepage (Root path)
 helpers do
 
-  # def encrypt(input)
-  #   Digest::SHA1.hexdigest(input) unless input.blank?
-  # end
-
-  #Going to have to check after factory girl and faker if password is already encrypted before using.
-  #Since we do not know at this time we should decide whether of not to use it.
-
   def check_login
-    return true unless @user.password != encrypt(params[:password])
+    return true unless @user.password != params[:password]
   end
 
   def signed_in?
@@ -37,17 +30,24 @@ post '/login' do
   @user = User.where(email: params[:email]).first
   if check_login
     session[:user_id] = @user.id
-    redirect "/user/#{user.id}"
+    redirect "/users/#{@user.id}"
   else
     @login_errors = true
     erb :'users/index'
   end
 end
 
-# get '/users/logout' do
-#   session.clear if current_user
-#   redirect '/login'
-# end
+
+get '/logout' do
+  session.clear
+  redirect '/login'
+end
+
+
+get '/users/:id' do
+  @company = current_user
+  erb :'companies/index'
+end
 
 
 

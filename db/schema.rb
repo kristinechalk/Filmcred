@@ -10,7 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023005427) do
+ActiveRecord::Schema.define(version: 20141024230345) do
+
+  create_table "documents", force: true do |t|
+    t.integer "worker_id"
+    t.integer "company_id"
+    t.string  "file"
+    t.integer "timestamp"
+  end
 
   create_table "requests", force: true do |t|
     t.integer "worker_id"
@@ -32,6 +39,7 @@ ActiveRecord::Schema.define(version: 20141023005427) do
     t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.binary   "icon"
   end
 
 end
