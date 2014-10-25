@@ -6,16 +6,53 @@
     differences in how form elements appear between Firefox and IE
     See: http://necolas.github.com/normalize.css/
   -->
+   <!--
   <link rel="stylesheet" href="/stylesheets/normalize.css">
-  <!--
+ 
     application.css is where you put your styles
-  -->
+ 
   <link rel="stylesheet" href="/stylesheets/application.css">
-
+  -->
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-  <script src="/javascript/application.js"></script>
+  <script src="//javascripts/application.js"></script>
 
+  <meta charset="utf-8" />
+    
+    <!-- Website Title & Description -->
+    <title>Flatr - Metro Parallax Multipurpose Coming Soon</title>
+    <meta name="description" content="Flatr - Metro Parallax Multipurpose Coming Soon">
+    
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport" content="width=device-width" />
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="apple-touch-icon-144x144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="apple-touch-icon-114x114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="shortcut icon" href="favicon.ico" />
+    
+    <!-- This script prevents links from opening in Mobile Safari. https://gist.github.com/1042026 -->
+    <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+    
+    <!-- Included CSS Files -->
+    <link rel="stylesheet" href="stylesheets/style.css">
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/foundation.css">
+    <link rel="stylesheet" href="stylesheets/supersized.css" type="text/css" media="screen" />
+  <link rel="stylesheet" href="stylesheets/supersized.shutter.css" type="text/css" media="screen" />
+    
+    <!-- Google Fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic' rel='stylesheet' type='text/css'>
+   
+    <!-- Included JS Files -->
+  <script src="javascripts/modernizr.foundation.js"></script>
   <title></title>
+   <link rel="stylesheet" href="stylesheets/application.css">
 </head>
 <body>
   <%= yield %>
