@@ -17,6 +17,14 @@ helpers do
     end
   end
 
+  # def is_worker?
+  #   return true if User.type == "Worker"
+  # end
+
+  # def is_company?
+  #   return true if User.type == "Company"
+  # end
+
 
 end
 
@@ -45,8 +53,21 @@ end
 
 
 get '/users/:id' do
-  @company = current_user
-  erb :'companies/index'
+  user = User.find(params[:id])
+  if user.type == "Company"
+    @company = user
+    erb :'companies/index'
+  elsif user.type == "Worker"
+    @worker = user
+    erb :'workers/index'
+
+  end
+end
+
+
+get '/search' do
+  @user = User.find(name: params[:name])
+  erb :'/search/index'
 end
 
 

@@ -1,1 +1,36 @@
-index.erb
+<div>
+    <ul>
+    <div><img src ="<%= @worker.icon %>"><div>
+
+    <div>
+      <p><strong><%= @worker.name %></a></strong></p>
+      <p>email: <%= @worker.email %></p>
+      <p>City: <%= @worker.city %></p>
+    </div>
+
+    </ul>
+  </div>
+
+
+
+<a href="/logout">Logout</a>
+
+<% if current_user.type == "Company" %>
+
+  <form action="/users/<%= @worker.id %>/request" method="post">
+    <input type="hidden" name="something" value="<%= @worker.id %>">
+    <input type="submit" name="request" value="Request">
+  </form>
+<% end %>
+  
+
+
+
+
+
+
+
+
+  <!-- <a href="/users/<%= current_user.id %>/request">Request</a>
+
+<a href="/users/<%= current_user.id %>/request">Approve</a> -->
