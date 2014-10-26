@@ -11,13 +11,6 @@ gem 'sinatra-activerecord'
 gem 'puma'
 gem 'tux'
 
-
-#ADDED GEMS
-gem 'factory_girl'
-gem 'faker'
-
-gem 'carrierwave'
-
 group :development, :test do
   gem 'pry'
   gem 'shotgun'

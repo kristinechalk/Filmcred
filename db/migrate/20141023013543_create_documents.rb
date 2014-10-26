@@ -4,7 +4,7 @@ class CreateDocuments < ActiveRecord::Migration
       # column definitions go here (because of calling db:migrate this occurs)
       t.integer :worker_id
       t.integer :company_id
-      t.string :filename
+      t.string :file
       t.integer :timestamp
     end
   end

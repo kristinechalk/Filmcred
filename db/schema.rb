@@ -10,14 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141023013543) do
-
-  create_table "documents", force: true do |t|
-    t.integer "worker_id"
-    t.integer "company_id"
-    t.string  "filename"
-    t.integer "timestamp"
-  end
+ActiveRecord::Schema.define(version: 20141023005427) do
 
   create_table "requests", force: true do |t|
     t.integer "worker_id"
@@ -32,9 +25,11 @@ ActiveRecord::Schema.define(version: 20141023013543) do
     t.string   "email"
     t.string   "password"
     t.string   "company"
+    t.string   "job_title"
+    t.string   "union_id"
     t.string   "phone_number"
-    t.string   "city"
-    t.binary   "icon"
+    t.datetime "birthdate"
+    t.string   "address"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
