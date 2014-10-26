@@ -1,3 +1,17 @@
+<form method="post" action="/search">
+  <div>
+    <label>Search:</label>
+    <input type="text" name="search" value="search">
+    <button type="submit">Enter</button>
+  </div>
+</form>
+
+<% if @search_errors %>
+  <div>
+    <p>Please search by the correct name</p>
+  </div>
+<% end %>
+
 <div>
   <ul>
   <div><img src ="<%= @company.icon %>"><div>

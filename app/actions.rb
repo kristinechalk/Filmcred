@@ -17,14 +17,12 @@ helpers do
     end
   end
 
-  # def is_worker?
-  #   return true if User.type == "Worker"
-  # end
-
-  # def is_company?
-  #   return true if User.type == "Company"
-  # end
-
+  def request_status(worker_id)
+    if something
+      return "pending"
+    elsif something
+      return "none"
+    end
 
 end
 
@@ -60,22 +58,43 @@ get '/users/:id' do
   elsif user.type == "Worker"
     @worker = user
     erb :'workers/index'
-
   end
 end
 
 
-get '/search' do
-  @user = User.find(name: params[:name])
-  erb :'/search/index'
+post '/upload' do
+  doc = Document.new
+  doc.filename = params[:filename]
+  doc.worker_id = current_user.id
+  doc.save
+  redirect '/documents'
 end
 
 
+get '/documents' do
+  @documents = current_user.documents
+  erb :'documents/index'
+end
 
 
+post '/search' do
+  
+  if User.exists?(name: params[:search])
+    @user = User.where(name: params[:search])[0]
+    redirect "/users/#{@user.id}"
+  else
+    @search_errors = true
+    redirect "/users/#{current_user.id}"
+  end
+end
 
 
-
+get '/workers/:id/request' do
+    req = current_user.request.new
+    req.worker_id = params[:id]
+    req.save
+  end
+end
 
 
 

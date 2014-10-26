@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20141023013543) do
   create_table "documents", force: true do |t|
     t.integer "worker_id"
     t.integer "company_id"
-    t.string  "file"
+    t.string  "filename"
     t.integer "timestamp"
   end
 

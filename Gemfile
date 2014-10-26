@@ -16,6 +16,8 @@ gem 'tux'
 gem 'factory_girl'
 gem 'faker'
 
+gem 'carrierwave'
+
 group :development, :test do
   gem 'pry'
   gem 'shotgun'
