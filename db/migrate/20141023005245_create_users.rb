@@ -8,11 +8,9 @@ class CreateUsers < ActiveRecord::Migration
       t.string :email
       t.string :password
       t.string :company
-      t.string :job_title
-      t.string :union_id
       t.string :phone_number
-      t.datetime :birthdate
-      t.string :address 
+      t.string :city 
+      t.binary :icon
       t.timestamps
     end
   end

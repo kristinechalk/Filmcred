@@ -1,0 +1,59 @@
+<div>
+  <form method="post" action="/search">
+    <div>
+      <label>Search:</label>
+      <input type="text" name="search" value="search">
+      <button type="submit">Enter</button>
+    </div>
+  </form>
+
+  <% if @search_errors %>
+    <div>
+      <p>Please search by the correct name</p>
+    </div>
+  <% end %>
+</div>
+
+<div>
+  <ul>
+  <div><img src ="<%= @worker.icon %>"><div>
+
+  <div>
+    <p><strong><%= @worker.name %></a></strong></p>
+    <p>email: <%= @worker.email %></p>
+    <p>City: <%= @worker.city %></p>
+  </div>
+
+  </ul>
+</div>
+
+<!-- Submitting Documents -->
+<% if current_user.type == "Worker" && current_user.id ==@worker.id %>
+  <form action="/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="filename"  >
+    <button type="submit">Upload Docs</button>
+  </form>
+  <a href="/documents">List of Documents</a>
+<% end %>
+
+
+
+
+
+<!-- Request Value -->
+<% if current_user.type == "Company" %>
+
+  <form action="/users/<%= @worker.id %>/request" method="post">
+    <input type="hidden" name="something" value="<%= @worker.id %>">
+    <input type="submit" name="request" value="Request">
+  </form>
+<% end %>
+  
+ <!-- Logout -->
+<a href="/logout">Logout</a>
+
+
+
+
+
+
